@@ -11,7 +11,7 @@ type Order struct {
 type OrderService struct{}
 
 func (orderService OrderService) MakeOrder(order *Order) Order {
-	order.Cost = (float64(order.Apples) * 0.6) + (float64(order.Oranges) * 0.25)
+	order.Cost = (float64(order.Apples/2 + order.Apples%2) * 0.6) + (float64(order.Oranges/3) * 0.5) + (float64(order.Oranges%3) * 0.25)
 	fmt.Println(order.Cost)
 	return *order
 }
