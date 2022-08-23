@@ -14,7 +14,7 @@ func TestMakeOrder(t *testing.T) {
 
 	service := models.OrderService{}
 	service.MakeOrder(&test_order)
-	wantResult := (float64(test_order.Apples/2 + test_order.Apples%2) * 0.6) + (float64(test_order.Oranges/3) * 0.5) + (float64(test_order.Oranges%3) * 0.25)
+	wantResult := (float64(test_order.Apples/2+test_order.Apples%2) * 0.6) + (float64(test_order.Oranges/3) * 0.5) + (float64(test_order.Oranges%3) * 0.25)
 	if test_order.Cost != wantResult {
 		t.Errorf("got %f want %f", test_order.Cost, wantResult)
 	}
